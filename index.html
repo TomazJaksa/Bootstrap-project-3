@@ -17,26 +17,45 @@
   <link rel="stylesheet" href="css/mdb.min.css">
   <!-- Your custom styles (optional) -->
   <link rel="stylesheet" href="css/style.css">
-  <script >
-  // Data Picker Initialization
-  $(document).ready(function(){
-      $('.datepicker').pickadate();
-  });
+  <!--Google Maps-->
+  <script src="https://maps.google.com/maps/api/js"></script>
+  <!-- Google Maps settings -->
+  <script>
+    // Regular map
+    function regular_map() {
+      var var_location = new google.maps.LatLng(45.879590, 15.241754);
 
+      var var_mapoptions = {
+        center: var_location,
+        zoom: 14
+      };
+
+      var var_map = new google.maps.Map(document.getElementById("map-container"),
+        var_mapoptions);
+
+      var var_marker = new google.maps.Marker({
+        position: var_location,
+        map: var_map,
+        title: "Brezovica 26"
+      });
+    }
+
+    // Initialize maps
+    google.maps.event.addDomListener(window, 'load', regular_map);
   </script>
 </head>
 <body>
 
   <!-- Start your project here-->
 
-  <!--Main Navigation-->
-<header>
+    <!--Main Navigation-->
+  <header>
 
-  <!--Navbar-->
-  <nav class="navbar navbar-expand-lg navbar-dark warning-color-dark">
-    <div class="container">
+    <!--Navbar-->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+      <div class="container">
       <!-- Navbar brand -->
-      <a class="navbar-brand font-weight-bold" href="#">Voleska</a>
+      <a class="navbar-brand" href="#">Navbar</a>
 
       <!-- Collapse button -->
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
@@ -48,410 +67,457 @@
       <div class="collapse navbar-collapse" id="basicExampleNav">
 
         <!-- Links -->
-        <ul class="navbar-nav mr-auto">
+        <ul class="navbar-nav mr-auto smooth-scroll">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home
+            <a class="nav-link" href="#intro">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
+            <a class="nav-link" href="#bestFeatures">Features</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
+            <a class="nav-link" href="#examples">Examples</a>
           </li>
-
-          <!-- Dropdown -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">Dropdown</a>
-            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
+          <li class="nav-item">
+            <a class="nav-link" href="#gallery">Gallery</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
           </li>
 
         </ul>
         <!-- Links -->
 
-        <form class="form-inline">
-          <div class="md-form my-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-          </div>
-        </form>
+        <!-- Social Icon  -->
+        <ul class="navbar-nav nav-flex-icons">
+            <li class="nav-item">
+                <a class="nav-link"><i class="fab fa-facebook-f"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link"><i class="fab fa-twitter"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link"><i class="fab fa-instagram"></i></a>
+            </li>
+        </ul>
       </div>
       <!-- Collapsible content -->
-    </div>
+      </div>
+    </nav>
+    <!--/.Navbar-->
 
+        <!--Mask-->
+    <div id="intro" class="view">
 
-  </nav>
-<!--/.Navbar-->
-</header>
-<!--Main Navigation-->
+        <div class="mask rgba-black-strong">
 
-<!--Main layout-->
-<main>
+            <div class="container-fluid d-flex align-items-center justify-content-center h-100">
 
-  <div class="container">
-    <div class="row my-5">
-      <div class="col-md-7">
-        <div class="view overlay zoom z-depth-1-half">
-          <img src="https://images.pushsquare.com/545a442770f12/final-fantasy-vii-7-remake-ps4-playstation-4-1.original.jpg" alt="Final Fantasy 7" class="img-fluid">
-        <div class="mask flex-center rgba-grey-light" >
-        <p class="white-text">Final Fantasy 7 "Remake"</p>
+                <div class="row d-flex justify-content-center text-center">
+
+                    <div class="col-md-10">
+
+                        <!-- Heading -->
+                        <h2 class="display-4 font-weight-bold white-text pt-5 mb-2">Travel</h2>
+
+                        <!-- Divider -->
+                        <hr class="hr-light">
+
+                        <!-- Description -->
+                        <h4 class="white-text my-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti consequuntur.</h4>
+                        <button type="button" class="btn btn-outline-white">Read more<i class="fas fa-book ml-2"></i></button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
-        </div>
-      </div>
 
-      <div class="col-md-5 mt-5">
-        <h2>Some awesome heading</h2>
-        <hr>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis pariatur quod ipsum atque quam dolorem
-          voluptate officia sunt placeat consectetur alias fugit cum praesentium ratione sint mollitia, perferendis
-          natus quaerat!
-        </p>
-        <a href="https://mdbootstrap.com/" class="btn btn-warning">Get it now!</a>
-      </div>
     </div>
+<!--/.Mask-->
+  </header>
+  <!--Main Navigation-->
 
-    <div class="row my-5">
-      <div class="col-md-12 col-lg-4">
-                  <!-- Card -->
-          <div class="card my-3 z-depth-1-half">
+  <!--Main layout-->
+  <main class="mt-5">
+    <div class="container">
 
-            <!-- Card image -->
-            <div class="view overlay zoom z-depth-1-half">
-              <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" alt="Card image cap">
-              <div class="mask flex-center rgba-grey-light" >
-            <p class="white-text">Card Zoom</p>
-            </div>
-            </div>
-            <!-- Card content -->
-            <div class="card-body">
-
-              <!-- Title -->
-              <h4 class="card-title"><a>Card title</a></h4>
-              <!-- Text -->
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
-              <!-- Button -->
-              <a href="#" class="btn btn-primary">Button</a>
-
-            </div>
-
-          </div>
-          <!-- Card -->
-      </div>
-
-      <div class="col-md-6 col-lg-4 ">
-                  <!-- Card -->
-          <div class="card my-3 z-depth-1-half">
-
-            <!-- Card image -->
-            <div class="view overlay zoom z-depth-1-half">
-              <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" alt="Card image cap">
-              <div class="mask flex-center rgba-grey-light" >
-            <p class="white-text">Card Zoom</p>
-            </div>
-            </div>
-            <!-- Card content -->
-            <div class="card-body">
-
-              <!-- Title -->
-              <h4 class="card-title"><a>Card title</a></h4>
-              <!-- Text -->
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
-              <!-- Button -->
-              <a href="#" class="btn btn-primary">Button</a>
-
-            </div>
-
-          </div>
-          <!-- Card -->
-      </div>
-
-      <div class="col-md-6 col-lg-4">
-                <!-- Card -->
-        <div class="card my-3 z-depth-1-half">
-
-          <!-- Card image -->
-          <div class="view overlay zoom z-depth-1-half">
-            <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" alt="Card image cap">
-            <div class="mask flex-center rgba-grey-light" >
-          <p class="white-text">Card Zoom</p>
-          </div>
-          </div>
-          <!-- Card content -->
-          <div class="card-body">
-
-            <!-- Title -->
-            <h4 class="card-title"><a>Card title</a></h4>
-            <!-- Text -->
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.</p>
-            <!-- Button -->
-            <a href="#" class="btn btn-primary">Button</a>
-
+      <!--Best features-->
+      <section id="bestFeatures">
+        <div class="row d-flex justify-content-center my-5">
+          <div class="col-md-8 text-center">
+            <h2 class="font-weight-bold mb-5">Best Features</h2>
+            <p class="grey-text">Deleniti consequuntur.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti consequuntur.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti consequuntur.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti consequuntur.</p>
           </div>
 
         </div>
-        <!-- Card -->
-      </div>
 
-    </div>
-    <div class="row my-5">
-      <div class="col-md-12 col-lg-4">
-                  <!-- Card -->
-          <div class="card my-3 z-depth-1-half">
-
-            <!-- Card image -->
-            <div class="view overlay zoom z-depth-1-half">
-              <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" alt="Card image cap">
-              <div class="mask flex-center rgba-grey-light" >
-            <p class="white-text">Card Zoom</p>
-            </div>
-            </div>
-            <!-- Card content -->
-            <div class="card-body">
-
-              <!-- Title -->
-              <h4 class="card-title"><a>Card title</a></h4>
-              <!-- Text -->
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
-              <!-- Button -->
-              <a href="#" class="btn btn-primary">Button</a>
-
-            </div>
-
-          </div>
-          <!-- Card -->
-      </div>
-
-      <div class="col-md-6 col-lg-4 ">
-                  <!-- Card -->
-          <div class="card my-3 z-depth-1-half">
-
-            <!-- Card image -->
-            <div class="view overlay zoom z-depth-1-half">
-              <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" alt="Card image cap">
-              <div class="mask flex-center rgba-grey-light" >
-            <p class="white-text">Card Zoom</p>
-            </div>
-            </div>
-            <!-- Card content -->
-            <div class="card-body">
-
-              <!-- Title -->
-              <h4 class="card-title"><a>Card title</a></h4>
-              <!-- Text -->
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
-              <!-- Button -->
-              <a href="#" class="btn btn-primary">Button</a>
-
-            </div>
-
-          </div>
-          <!-- Card -->
-      </div>
-
-      <div class="col-md-6 col-lg-4">
-                <!-- Card -->
-        <div class="card my-3 z-depth-1-half">
-
-          <!-- Card image -->
-          <div class="view overlay zoom z-depth-1-half">
-            <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" alt="Card image cap">
-            <div class="mask flex-center rgba-grey-light" >
-          <p class="white-text">Card Zoom</p>
-          </div>
-          </div>
-          <!-- Card content -->
-          <div class="card-body">
-
-            <!-- Title -->
-            <h4 class="card-title"><a>Card title</a></h4>
-            <!-- Text -->
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.</p>
-            <!-- Button -->
-            <a href="#" class="btn btn-primary">Button</a>
-
+        <div class="row d-flex justify-content-center my-5">
+          <div class="col-md-4 text-center">
+            <i class="fas fa-camera-retro text-danger my-4 fa-4x"></i>
+            <h3 class="mb-4 font-weight-bold">Experience</h3>
+            <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti consequuntur.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti consequuntur.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti consequuntur.</p>
           </div>
 
+          <div class="col-md-4 text-center">
+            <i class="fas fa-heart text-danger my-4 fa-4x"></i>
+            <h3 class="mb-4 font-weight-bold">Happiness</h3>
+            <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti consequuntur.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti consequuntur.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti consequuntur.</p>
+          </div>
+
+          <div class="col-md-4 text-center">
+            <i class="fas fa-bicycle text-danger my-4 fa-4x"></i>
+            <h3 class="mb-4 font-weight-bold">Adventure</h3>
+            <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti consequuntur.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti consequuntur.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti consequuntur.</p>
+          </div>
         </div>
-        <!-- Card -->
-      </div>
+      </section>
+      <!--Best features-->
+
+      <hr class="my-5">
+
+      <!--Examples-->
+      <section id="examples" class="text-center">
+        <h2 class="font-weight-bold">Stunning Examples</h2>
+        <div class="row">
+
+          <div class="col-md-12 col-lg-4 text-center my-5">
+            <div class="view overlay z-depth-1-half">
+              <img src="https://i.ytimg.com/vi/p1OvupaRYCM/maxresdefault.jpg" height="200em" class="img-fluid" alt="image">
+                <div class="mask flex-center rgba-black-strong">
+                <p class="white-text">Final Fantasy 7 Remake</p>
+              </div>
+            </div>
+              <h2 class="font-weight-bold my-3">Final Fantasy 7 Remake</h2>
+            <p class="grey-text">Deleniti consequuntur.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti consequuntur.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti consequuntur.</p>
+          </div>
+          <div class="col-md-6 col-lg-4 text-center my-5">
+            <div class="view overlay z-depth-1-half">
+              <img src="http://4.bp.blogspot.com/-csUqm5aU0ro/VYW4-YlF_6I/AAAAAAAAFgI/eBb1VBsfaBI/s1600/final-fantasy-7-logo.jpg" height="200em" class="img-fluid" alt="image">
+                <div class="mask flex-center rgba-black-strong">
+                <p class="white-text">Final Fantasy 7</p>
+              </div>
+            </div>
+              <h2 class="font-weight-bold my-3">Final Fantasy 7</h2>
+            <p class="grey-text">Deleniti consequuntur.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti consequuntur.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti consequuntur.</p>
+          </div>
+          <div class="col-md-6 col-lg-4 text-center my-5">
+            <div class="view overlay z-depth-1-half">
+              <img src="http://vignette2.wikia.nocookie.net/finalfantasy/images/6/63/Bc-logo.jpg/revision/latest?cb=20080412192616" class="img-fluid" alt="image">
+                <div class="mask flex-center rgba-black-strong">
+                <p class="white-text">Final Fantasy 7 Before Crisis</p>
+              </div>
+            </div>
+              <h2 class="font-weight-bold my-3">Before Crisis</h2>
+            <p class="grey-text">Deleniti consequuntur.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti consequuntur.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti consequuntur.</p>
+          </div>
+
+
+        <div class="row">
+          <div class="col-md-12 col-lg-4 text-center my-5">
+            <div class="view overlay z-depth-1-half">
+              <img src="http://vignette2.wikia.nocookie.net/finalfantasy/images/f/f9/Crisis_Core_%E2%80%93_Final_Fantasy_VII_Logo.PNG/revision/latest?cb=20061112195555" class="img-fluid" alt="image">
+                <div class="mask flex-center rgba-black-strong">
+                <p class="white-text">Final Fantasy 7 Crisis Core</p>
+              </div>
+            </div>
+              <h2 class="font-weight-bold my-3">Crisis Core</h2>
+            <p class="grey-text">Deleniti consequuntur.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti consequuntur.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti consequuntur.</p>
+          </div>
+          <div class="col-md-6 col-lg-4 text-center my-5">
+            <div class="view overlay z-depth-1-half">
+              <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/17490c19-2268-4b4a-876a-ece9b2ae3eae/d6dv6p-000410ec-94e9-4b20-a39d-4a333a9d2d8c.jpg/v1/fill/w_2000,h_1400,q_75,strp/ff7_advent_children_logo_redo_by_richsc.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwic3ViIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl0sIm9iaiI6W1t7InBhdGgiOiIvZi8xNzQ5MGMxOS0yMjY4LTRiNGEtODc2YS1lY2U5YjJhZTNlYWUvZDZkdjZwLTAwMDQxMGVjLTk0ZTktNGIyMC1hMzlkLTRhMzMzYTlkMmQ4Yy5qcGciLCJ3aWR0aCI6Ijw9MjAwMCIsImhlaWdodCI6Ijw9MTQwMCJ9XV19.YhLQXJrgcJ_pU6c8AbYSfBl8wjwwuZY6qZgDUGsxx7o" class="img-fluid" alt="image">
+                <div class="mask flex-center rgba-black-strong">
+                <p class="white-text">Final Fantasy 7 Advent Children</p>
+              </div>
+            </div>
+              <h2 class="font-weight-bold my-3">Advent Children</h2>
+            <p class="grey-text">Deleniti consequuntur.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti consequuntur.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti consequuntur.</p>
+          </div>
+          <div class="col-md-6 col-lg-4 text-center my-5">
+            <div class="view overlay z-depth-1-half">
+              <img src="http://vignette4.wikia.nocookie.net/finalfantasy/images/9/97/DoClogo.PNG/revision/latest?cb=20140417162631" class="img-fluid" alt="image">
+                <div class="mask flex-center rgba-black-strong">
+                <p class="white-text">Final Fantasy 7 Dirge of Cerberus</p>
+              </div>
+            </div>
+              <h2 class="font-weight-bold my-3">Dirge of Cerberus</h2>
+            <p class="grey-text">Deleniti consequuntur.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti consequuntur.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti consequuntur.</p>
+          </div>
+        </div>
+
+      </section>
+      <!--Examples-->
+
+      <hr class="my-5">
+
+      <!--Gallery-->
+      <section id="gallery" class="text-center">
+        <h2 class="font-weight-bold my-5">Gallery heading</h2>
+        <div class="row">
+          <div class="col-md-6 mb-5">
+            <!--Carousel Wrapper-->
+            <div id="carousel-example-1z" class="carousel slide carousel-fade z-depth-3" data-ride="carousel">
+              <!--Indicators-->
+              <ol class="carousel-indicators">
+                <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-1z" data-slide-to="1"></li>
+                <li data-target="#carousel-example-1z" data-slide-to="2"></li>
+              </ol>
+              <!--/.Indicators-->
+              <!--Slides-->
+              <div class="carousel-inner" role="listbox">
+                <!--First slide-->
+                <div class="carousel-item active">
+                  <img class="d-block w-100" src="https://i.ytimg.com/vi/p1OvupaRYCM/maxresdefault.jpg"
+                    alt="First slide">
+                </div>
+                <!--/First slide-->
+                <!--Second slide-->
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="http://www.fraghero.com/wp-content/uploads/2016/02/buster-sword-2.jpeg"
+                    alt="Second slide">
+                </div>
+                <!--/Second slide-->
+                <!--Third slide-->
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="http://img1.wikia.nocookie.net/__cb20110407233700/finalfantasy/images/2/27/Midgar-construction.jpg"
+                    alt="Third slide">
+                </div>
+                <!--/Third slide-->
+              </div>
+              <!--/.Slides-->
+              <!--Controls-->
+              <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+              <!--/.Controls-->
+            </div>
+            <!--/.Carousel Wrapper-->
+          </div>
+          <div class="col-md-6 text-left">
+            <h6 class="font-weight-bold teal-text"><i class="fas fa-heart teal-text"></i> Lifestyle</h6>
+            <h4 class="font-weight-bold my-3">This is title of the news</h4>
+            <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus et aut officiis debitis aut rerum.</p>
+            <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus et aut officiis debitis aut rerum.</p>
+            <p>by <span class="font-weight-bold">Jessica Clark</span>, 26/08/2016</p>
+            <button type="button" class="btn btn-primary">READ MORE</button>
+          </div>
+        </div>
+        <!--Row-->
+      </section>
+      <!--Gallery-->
+
+      <hr class="my-5">
+
+      <!--Contact-->
+      <section id="contact" class="text-center">
+        <h2 class="font-weight-bold my-5">Gallery heading</h2>
+        <div class="row">
+          <div class="col-md-12 col-lg-5">
+            <!-- Material input -->
+            <div class="md-form form-sm input-with-pre-icon"><i class=" grey-text fas fa-user input-prefix"></i>
+              <input type="text" id="inputIconEx2" class="form-control form-control-sm">
+              <label for="inputIconEx2">Your Name</label>
+            </div>
+
+            <!-- Material input -->
+            <div class="md-form form-sm input-with-pre-icon"><i class=" grey-text fas fa-envelope input-prefix"></i>
+              <input type="text" id="inputIconEx1" class="form-control form-control-sm">
+              <label for="inputIconEx1">E-mail address</label>
+            </div>
+
+            <!-- Material input -->
+            <div class="md-form form-sm input-with-pre-icon"><i class=" grey-text fas fa-tag input-prefix"></i>
+              <input type="text" id="inputIconEx3" class="form-control form-control-sm">
+              <label for="inputIconEx3">Subject</label>
+            </div>
+
+            <div class="md-form">
+              <textarea id="textarea-char-counter" class="form-control md-textarea" length="120" rows="3"></textarea>
+              <label for="textarea-char-counter">Your Message</label>
+              <button type="button" class="btn btn-primary my-5">SEND</button>
+            </div>
+
+          </div>
+
+          <div class="col-md-12 col-lg-7">
+            <div class="row text-center ml-5 mr-1">
+              <div class="col-md-12 col-lg-4">
+                <p><i class="fas fa-map-marked-alt mr-2 fa-1x grey-text"></i>Brezovica 26, Š.T. 8220</p>
+              </div>
+
+              <div class="col-md-6 col-lg-4 ">
+                <p><i class="fas fa-building fa-1x mr-2 grey-text"></i>Ponedeljek-Petek, 8:00-22:00</p>
+              </div>
+
+              <div class="col-md-6 col-lg-4">
+                <p><i class="fas fa-phone fa-1x mr-2 grey-text"></i>+386 51 384 099</p>
+              </div>
+
+            </div>
+            <!--Google map-->
+            <div id="map-container" class="z-depth-1 map-container mb-5 ml-5" style="height: 400px"></div>
+            </div>
+        </div>
+      </section>
+      <!--Contact-->
 
     </div>
-
-
-  </div>
-</main>
-<!--Main layout-->
+  </main>
+  <!--Main layout-->
 
   <!-- Footer -->
-<footer class="page-footer font-small warning-color-dark pt-4">
+  <footer class="page-footer font-small unique-color-dark">
 
-  <!-- Footer Links -->
-  <div class="container text-center text-md-left">
+    <div class="danger-color-dark">
+      <div class="container">
 
-    <!-- Grid row -->
-    <div class="row">
+        <!-- Grid row-->
+        <div class="row py-4 d-flex align-items-center">
 
-      <!-- Grid column -->
-      <div class="col-md-4 mx-auto">
+          <!-- Grid column -->
+          <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+            <h6 class="mb-0">Get connected with us on social networks!</h6>
+          </div>
+          <!-- Grid column -->
 
-        <!-- Content -->
-        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Footer Content</h5>
-        <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
-          consectetur
-          adipisicing elit.</p>
+          <!-- Grid column -->
+          <div class="col-md-6 col-lg-7 text-center text-md-right">
 
-      </div>
-      <!-- Grid column -->
+            <!-- Facebook -->
+            <a class="fb-ic">
+              <i class="fab fa-facebook-f white-text mr-4"> </i>
+            </a>
+            <!-- Twitter -->
+            <a class="tw-ic">
+              <i class="fab fa-twitter white-text mr-4"> </i>
+            </a>
+            <!-- Google +-->
+            <a class="gplus-ic">
+              <i class="fab fa-google-plus-g white-text mr-4"> </i>
+            </a>
+            <!--Linkedin -->
+            <a class="li-ic">
+              <i class="fab fa-linkedin-in white-text mr-4"> </i>
+            </a>
+            <!--Instagram-->
+            <a class="ins-ic">
+              <i class="fab fa-instagram white-text"> </i>
+            </a>
 
-      <hr class="clearfix w-100 d-md-none">
+          </div>
+          <!-- Grid column -->
 
-      <!-- Grid column -->
-      <div class="col-md-2 mx-auto">
-
-        <!-- Links -->
-        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
-
-        <ul class="list-unstyled">
-          <li>
-            <a href="#!">Link 1</a>
-          </li>
-          <li>
-            <a href="#!">Link 2</a>
-          </li>
-          <li>
-            <a href="#!">Link 3</a>
-          </li>
-          <li>
-            <a href="#!">Link 4</a>
-          </li>
-        </ul>
-
-      </div>
-      <!-- Grid column -->
-
-      <hr class="clearfix w-100 d-md-none">
-
-      <!-- Grid column -->
-      <div class="col-md-2 mx-auto">
-
-        <!-- Links -->
-        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
-
-        <ul class="list-unstyled">
-          <li>
-            <a href="#!">Link 1</a>
-          </li>
-          <li>
-            <a href="#!">Link 2</a>
-          </li>
-          <li>
-            <a href="#!">Link 3</a>
-          </li>
-          <li>
-            <a href="#!">Link 4</a>
-          </li>
-        </ul>
+        </div>
+        <!-- Grid row-->
 
       </div>
-      <!-- Grid column -->
+    </div>
 
-      <hr class="clearfix w-100 d-md-none">
+    <!-- Footer Links -->
+    <div class="container text-center text-md-left mt-5">
 
-      <!-- Grid column -->
-      <div class="col-md-2 mx-auto">
+      <!-- Grid row -->
+      <div class="row mt-3">
 
-        <!-- Links -->
-        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
 
-        <ul class="list-unstyled">
-          <li>
-            <a href="#!">Link 1</a>
-          </li>
-          <li>
-            <a href="#!">Link 2</a>
-          </li>
-          <li>
-            <a href="#!">Link 3</a>
-          </li>
-          <li>
-            <a href="#!">Link 4</a>
-          </li>
-        </ul>
+          <!-- Content -->
+          <h6 class="text-uppercase font-weight-bold">Company name</h6>
+          <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+          <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
+            consectetur
+            adipisicing elit.</p>
+
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+
+          <!-- Links -->
+          <h6 class="text-uppercase font-weight-bold">Products</h6>
+          <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+          <p>
+            <a href="#!">MDBootstrap</a>
+          </p>
+          <p>
+            <a href="#!">MDWordPress</a>
+          </p>
+          <p>
+            <a href="#!">BrandFlow</a>
+          </p>
+          <p>
+            <a href="#!">Bootstrap Angular</a>
+          </p>
+
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+          <!-- Links -->
+          <h6 class="text-uppercase font-weight-bold">Useful links</h6>
+          <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+          <p>
+            <a href="#!">Your Account</a>
+          </p>
+          <p>
+            <a href="#!">Become an Affiliate</a>
+          </p>
+          <p>
+            <a href="#!">Shipping Rates</a>
+          </p>
+          <p>
+            <a href="#!">Help</a>
+          </p>
+
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+          <!-- Links -->
+          <h6 class="text-uppercase font-weight-bold">Contact</h6>
+          <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+          <p>
+            <i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
+          <p>
+            <i class="fas fa-envelope mr-3"></i> info@example.com</p>
+          <p>
+            <i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+          <p>
+            <i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+
+        </div>
+        <!-- Grid column -->
 
       </div>
-      <!-- Grid column -->
+      <!-- Grid row -->
 
     </div>
-    <!-- Grid row -->
+    <!-- Footer Links -->
 
-  </div>
-  <!-- Footer Links -->
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+      <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+    </div>
+    <!-- Copyright -->
 
-  <hr>
-
-  <!-- Call to action -->
-  <ul class="list-unstyled list-inline text-center py-2">
-    <li class="list-inline-item">
-      <h5 class="mb-1">Register for free</h5>
-    </li>
-    <li class="list-inline-item">
-      <a href="#!" class="btn btn-dark btn-rounded">Sign up!</a>
-    </li>
-  </ul>
-  <!-- Call to action -->
-
-  <hr>
-
-  <!-- Social buttons -->
-  <ul class="list-unstyled list-inline text-center">
-      <li class="list-inline-item">
-        <a class="btn-floating btn-fb mx-1">
-          <i class="fab fa-facebook-f"> </i>
-        </a>
-      </li>
-      <li class="list-inline-item">
-        <a class="btn-floating btn-tw mx-1">
-          <i class="fab fa-twitter"> </i>
-        </a>
-      </li>
-      <li class="list-inline-item">
-        <a class="btn-floating btn-gplus mx-1">
-          <i class="fab fa-google-plus-g"> </i>
-        </a>
-      </li>
-      <li class="list-inline-item">
-        <a class="btn-floating btn-li mx-1">
-          <i class="fab fa-linkedin-in"> </i>
-        </a>
-      </li>
-      <li class="list-inline-item">
-        <a class="btn-floating btn-dribbble mx-1">
-          <i class="fab fa-dribbble"> </i>
-        </a>
-      </li>
-    </ul>
-  <!-- Social buttons -->
-
-  <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2020 Copyright:
-    <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
-  </div>
-  <!-- Copyright -->
-
-</footer>
-
-<!--Footer-->
+  </footer>
+  <!-- Footer -->
 
   <!-- End your project here-->
 
